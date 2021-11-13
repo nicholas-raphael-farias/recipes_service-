@@ -16,14 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from apps.recipes.urls import RECIPES_ROUTER
 # EXAMPLE: Add example_app routes
 # from apps.example_app.urls import EXAMPLES_ROUTER
 
 V1_ROUTER = DefaultRouter()
+
+V1_ROUTER.registry.extend(RECIPES_ROUTER.registry)
 
 # EXAMPLE: Add example_app routes
 # V1_ROUTER.registry.extend(EXAMPLES_ROUTER.registry)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1',include(V1_ROUTER.urls))
 ]

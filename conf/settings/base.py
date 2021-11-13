@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'corsheaders',
     'rest_framework',
-    #'core.apps.CoreConfig',
+    'apps.recipes',
     # EXAMPLE: Add example_app
     # 'apps.example_app.apps.ExampleAppConfig',
 ]
